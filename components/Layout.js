@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import { Grommet, Box, ResponsiveContext, Main } from 'grommet';
+import setLanguage from 'next-translate/setLanguage';
 
 import theme from '../config/theme';
 
@@ -49,7 +50,8 @@ function Layout(props) {
         <meta name="theme-color" content="#660F33" />
       </Head>
 
-      <Main background="dark-1" width="100%" height="100%">
+      <Main background="#111111" width="100%" pad={{ bottom: 'xlarge' }}>
+        <button onClick={async () => await setLanguage('tr')}>TR</button>
         <ResponsiveContext.Consumer>
           {(size) => {
             const large = ['large', 'medium'].includes(size);

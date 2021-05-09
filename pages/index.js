@@ -1,8 +1,6 @@
 import Head from 'next/head';
-import Image from 'next/image';
-// import styles from '../styles/Home.module.css';
-
 import Layout from '../components/Layout';
+import { Box, Heading, Image, Text } from 'grommet';
 
 export default function Home() {
   return (
@@ -17,7 +15,28 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <h1>This is Sphinx Dance</h1>
+        <Heading level={3} alignSelf="center">
+          Sphinx Dance
+        </Heading>
+
+        <Heading alignSelf="center" margin={{ bottom: 'xsmall' }}>
+          Jackfruit Ceremony
+        </Heading>
+        <Text
+          size="large"
+          textAlign="center"
+          as="em"
+          margin={{ bottom: 'medium' }}
+        >
+          a Ritualistic Gathering in Full Moon
+        </Text>
+        <Box height="medium" width="100%" overflow="hidden">
+          <Image
+            fill="horizontal"
+            fit="cover"
+            src="/images/jackfruit-ceremony/jackfruit-ceremony-1.jpeg"
+          />
+        </Box>
       </Layout>
     </>
   );
