@@ -31,11 +31,13 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <Heading level={3} alignSelf="center" margin={{ bottom: 'small' }}>
+        <Heading level={2} alignSelf="center" margin={{ bottom: 'small' }}>
           Sphinx Dance
         </Heading>
 
-        <MainMenu />
+        <Box pad="large">
+          <MainMenu />
+        </Box>
 
         <Box
           alignSelf="center"
@@ -52,37 +54,32 @@ export default function Home() {
           </Paragraph>
         </Box>
 
-        <Stack
-          anchor="bottom"
-          style={{ cursor: 'pointer' }}
-          onClick={() => router.push('/jackfruit-ceremony')}
-        >
-          <Box
-            height="medium"
-            width="100%"
-            overflow="hidden"
-            animation="fadeIn"
-          >
-            <Image
-              fill="horizontal"
-              fit="cover"
-              src="/images/jackfruit-ceremony/home-banner.jpg"
-              style={{ objectPosition: 'center left' }}
-            />
-          </Box>
-          <Box background="rgba(0, 0, 0, 0.5)">
-            <Heading textAlign="center" margin="large">
-              Jackfruit Ceremony
-            </Heading>
-          </Box>
-        </Stack>
+        <Box pad={{ vertical: 'large' }}>
+          <CoolStack
+            title="Larvae"
+            anchor="right"
+            imageSrc="/images/larvae/2.jpg"
+            objectPosition="center right"
+          />
+        </Box>
 
-        <Text
-          size="large"
-          textAlign="center"
-          as="em"
-          margin={{ bottom: 'medium' }}
-        ></Text>
+        <Box pad={{ vertical: 'large' }}>
+          <CoolStack
+            title="Jackfruit Ceremony"
+            anchor="bottom"
+            imageSrc="/images/jackfruit-ceremony/home-banner.jpg"
+            objectPosition="center left"
+          />
+        </Box>
+
+        <Box pad={{ vertical: 'large' }}>
+          <CoolStack
+            title="Spiral Sphinx"
+            anchor="top"
+            imageSrc="/images/spiral-sphinx/carousel/1.jpg"
+            objectPosition="center "
+          />
+        </Box>
       </Layout>
     </>
   );
@@ -103,12 +100,6 @@ function MainMenu() {
         }
         items={[
           {
-            label: 'Spiral Sphinx',
-            onClick: () => {
-              router.push('/spiral-sphinx');
-            },
-          },
-          {
             label: 'Larvae',
             onClick: () => {
               router.push('/larvae');
@@ -120,9 +111,15 @@ function MainMenu() {
               router.push('/jackfruit-ceremony');
             },
           },
+          {
+            label: 'Spiral Sphinx',
+            onClick: () => {
+              router.push('/spiral-sphinx');
+            },
+          },
         ]}
       />
-      <Anchor
+      {/* <Anchor
         as="span"
         size="small"
         color="brand"
@@ -139,7 +136,31 @@ function MainMenu() {
         margin="small"
       >
         <Link href="/about">{t('about')}</Link>
-      </Anchor>
+      </Anchor> */}
     </Nav>
+  );
+}
+
+function CoolStack({ title, anchor, imageSrc, objectPosition }) {
+  return (
+    <Stack
+      anchor={anchor || 'bottom'}
+      style={{ cursor: 'pointer' }}
+      onClick={() => router.push('/jackfruit-ceremony')}
+    >
+      <Box height="medium" width="100%" overflow="hidden" animation="fadeIn">
+        <Image
+          fill="horizontal"
+          fit="cover"
+          src={imageSrc}
+          style={{ objectPosition: objectPosition || 'center left' }}
+        />
+      </Box>
+      <Box background="rgba(0, 0, 0, 0.5)">
+        <Heading textAlign="center" margin="large">
+          {title}
+        </Heading>
+      </Box>
+    </Stack>
   );
 }

@@ -44,18 +44,24 @@ export default function JackfruitCeremony() {
             <Link href="/">Home</Link>
           </Anchor>
         </Box>
-        <Heading alignSelf="center" margin={{ bottom: 'xsmall' }}>
+        <Heading
+          alignSelf="center"
+          textAlign="center"
+          margin={{ bottom: 'xsmall', top: 'small' }}
+        >
           {t('title')}
         </Heading>
-        <Text
-          size="medium"
+        <Heading
+          level="3"
+          size="small"
           textAlign="center"
-          as="em"
-          margin={{ bottom: 'medium' }}
+          alignSelf="center"
           pad={{ horizontal: 'medium' }}
+          margin={{ top: 'none', bottom: 'small' }}
+          style={{ fontWeight: 200 }}
         >
-          {t('subTitle')}
-        </Text>
+          <em>{t('subTitle')}</em>
+        </Heading>
         <Box
           height="medium"
           width="100%"
@@ -76,32 +82,34 @@ export default function JackfruitCeremony() {
         <Box background="#030303" width="100%">
           <Box alignSelf="center" direction="row">
             <Box width="small" pad="medium">
-              <Heading level="6" margin={{ bottom: 'xsmall' }} as="em">
+              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
                 {t('conceptEtcBy')}
               </Heading>
               <Text margin={{ bottom: 'small' }}>Emin Durak</Text>
             </Box>
             <Box width="small" pad="medium">
-              <Heading level="6" margin={{ bottom: 'xsmall' }} as="em">
+              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
                 {t('photosBy')}
               </Heading>
               <Text margin={{ bottom: 'small' }}>Alya Pogodina</Text>
             </Box>
             <Box width="small" pad="medium">
-              <Heading level="6" margin={{ bottom: 'xsmall' }} as="em">
+              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
                 {t('actors')}
               </Heading>
-              <Text margin={{ bottom: 'small' }}>John... etc</Text>
+              <Text margin={{ bottom: 'small' }}>
+                John, Judith, Kasia, Emin, Haya, Amanda, Annette, Coco
+              </Text>
             </Box>
           </Box>
         </Box>
         <Box pad="medium">
           <Box alignSelf="center" width="medium">
-            <Heading level="4">{t('concept')}</Heading>
+            <Heading level="3" size="small">
+              {t('concept')}
+            </Heading>
             {conceptDescription.map((p) => (
-              <Paragraph size="small" key={p.substr(0, 30)}>
-                {p}
-              </Paragraph>
+              <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
             ))}
           </Box>
         </Box>

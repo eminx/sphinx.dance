@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
-// import Image from 'next/image';
 import Layout from '../../components/Layout';
 import { Anchor, Box, Heading, Image, Layer, Text, Paragraph } from 'grommet';
 import AliceCarousel from 'react-alice-carousel';
@@ -9,13 +8,13 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import useTranslation from 'next-translate/useTranslation';
 
 const carouselImages = [];
-for (let i = 1; i <= 6; i++) {
+for (let i = 1; i <= 2; i++) {
   carouselImages.push(i);
 }
 
-export default function SpiralSphinx() {
+export default function Larvae() {
   const [showGallery, setShowGallery] = useState(false);
-  const { t, lang } = useTranslation('spiral-sphinx');
+  const { t, lang } = useTranslation('larvae');
 
   const description = t('description', {}, { returnObjects: true });
   const credits = t('credits', {}, { returnObjects: true });
@@ -27,10 +26,10 @@ export default function SpiralSphinx() {
   return (
     <>
       <Head>
-        <title>Jackfruit Ceremony | Sphinx Dance | Emin Durak</title>
+        <title>Larvae | Sphinx Dance | Emin Durak</title>
         <meta
           name="description"
-          content="Spiral Sphinx | Sphinx Dance | Independent Nomadic Studio for Movement Arts Synthesis & Research"
+          content="Larvae | Sphinx Dance | Independent Nomadic Studio for Movement Arts Synthesis & Research"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -65,11 +64,7 @@ export default function SpiralSphinx() {
           overflow="hidden"
           onClick={() => openGallery()}
         >
-          <Image
-            fill="horizontal"
-            fit="cover"
-            src="/images/spiral-sphinx/carousel/1.jpg"
-          />
+          <Image fill="horizontal" fit="cover" src="/images/larvae/2.jpg" />
         </Box>
         <Box onClick={() => openGallery()} alignSelf="center" pad="small">
           <Text size="small" color="brand" weight="bold">
@@ -89,15 +84,6 @@ export default function SpiralSphinx() {
           <Box alignSelf="center" width="medium">
             <Heading level="4">{t('performedAtTitle')}</Heading>
             {performedAt.map((p) => (
-              <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
-            ))}
-          </Box>
-        </Box>
-
-        <Box pad="medium">
-          <Box alignSelf="center" width="medium">
-            <Heading level="4">{t('creditsTitle')}</Heading>
-            {credits.map((p) => (
               <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
             ))}
           </Box>
@@ -124,7 +110,7 @@ export default function SpiralSphinx() {
                   <Image
                     fit="contain"
                     fill="vertical"
-                    src={`/images/spiral-sphinx/carousel/${image}.jpg`}
+                    src={`/images/larvae/${image}.jpg`}
                   />
                 </Box>
               ))}

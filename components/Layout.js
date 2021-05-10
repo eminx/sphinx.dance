@@ -1,20 +1,20 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { Grommet, Box, ResponsiveContext, Main } from 'grommet';
+import {
+  Anchor,
+  Box,
+  Footer,
+  Grommet,
+  Heading,
+  Main,
+  Paragraph,
+  ResponsiveContext,
+} from 'grommet';
 import setLanguage from 'next-translate/setLanguage';
 import useTranslation from 'next-translate/useTranslation';
 
 import theme from '../config/theme';
-
-const fixedHeaderStyle = {
-  position: 'fixed',
-  top: 0,
-  width: '100%',
-  maxWidth: 1280,
-  zIndex: 99,
-  paddingRight: 0,
-};
 
 function Layout(props) {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -53,7 +53,7 @@ function Layout(props) {
         <meta name="theme-color" content="#660F33" />
       </Head>
 
-      <Main background="#111111" width="100%" pad={{ bottom: 'xlarge' }}>
+      <Main background="#111111" width="100%">
         {/* <Box>
           {lang === 'en' ? (
             <Box onClick={() => setLanguage('tr')}>
@@ -73,6 +73,33 @@ function Layout(props) {
           }}
         </ResponsiveContext.Consumer>
       </Main>
+
+      <Footer background="dark-1" direction="column" pad="xlarge">
+        <Box direction="row" justify="center">
+          <Box width="medium">
+            <Paragraph
+              color="brand"
+              textAlign="center"
+              style={{ fontFamily: 'Crimson Pro' }}
+            >
+              <b>{t('homeAbout')}</b>
+            </Paragraph>
+          </Box>
+        </Box>
+
+        <Heading
+          color="light-3"
+          level="3"
+          textAlign="center"
+          margin={{ bottom: 'xsmall' }}
+        >
+          Contact:{' '}
+        </Heading>
+        <Anchor href="mailto:namaste@sphinx.dance">namaste@sphinx.dance</Anchor>
+        <Anchor href="https://www.sphinx.dance">
+          <b>www.sphinx.dance</b>
+        </Anchor>
+      </Footer>
     </Grommet>
   );
 }
