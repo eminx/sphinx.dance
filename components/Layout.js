@@ -54,17 +54,21 @@ function Layout(props) {
       </Head>
 
       <Main background="#111111" width="100%">
-        {/* <Box>
+        <Box style={{ position: 'absolute', top: 6, right: 6 }}>
           {lang === 'en' ? (
-            <Box onClick={() => setLanguage('tr')}>
-              <a>Türkçe</a>
+            <Box onClick={async () => await setLanguage('tr')}>
+              <Anchor color="light-4" size="small">
+                Türkçe
+              </Anchor>
             </Box>
           ) : (
-            <Box onClick={() => setLanguage('en')}>
-              <a>English</a>
+            <Box onClick={async () => await setLanguage('en')}>
+              <Anchor color="light-4" size="small">
+                English
+              </Anchor>
             </Box>
           )}
-        </Box> */}
+        </Box>
 
         <ResponsiveContext.Consumer>
           {(size) => {
