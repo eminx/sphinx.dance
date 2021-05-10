@@ -11,6 +11,10 @@ const theme = deepFreeze(
         'accent-1': mainColor,
         focus: 'brand',
       },
+      font: {
+        family: "'Crimson Pro', serif",
+        size: '16px',
+      },
     },
     heading: {
       color: mainColor,
