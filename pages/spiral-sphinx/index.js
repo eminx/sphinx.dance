@@ -9,20 +9,17 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import useTranslation from 'next-translate/useTranslation';
 
 const carouselImages = [];
-for (let i = 1; i <= 40; i++) {
+for (let i = 1; i <= 6; i++) {
   carouselImages.push(i);
 }
 
-export default function JackfruitCeremony() {
+export default function SpiralSphinx() {
   const [showGallery, setShowGallery] = useState(false);
-  const { t, lang } = useTranslation('jackfruit-ceremony');
+  const { t, lang } = useTranslation('spiral-sphinx');
 
-  const conceptDescription = t(
-    'conceptDescription',
-    {},
-    { returnObjects: true }
-  );
-
+  const description = t('description', {}, { returnObjects: true });
+  const credits = t('credits', {}, { returnObjects: true });
+  const performedAt = t('performedAt', {}, { returnObjects: true });
   const openGallery = () => {
     setShowGallery(true);
   };
@@ -33,7 +30,7 @@ export default function JackfruitCeremony() {
         <title>Jackfruit Ceremony | Sphinx Dance | Emin Durak</title>
         <meta
           name="description"
-          content="Jackfruit Ceremony | Sphinx Dance | Independent Nomadic Studio for Movement Arts Synthesis & Research"
+          content="Spiral Sphinx | Sphinx Dance | Independent Nomadic Studio for Movement Arts Synthesis & Research"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -65,7 +62,7 @@ export default function JackfruitCeremony() {
           <Image
             fill="horizontal"
             fit="cover"
-            src="/images/jackfruit-ceremony/jackfruit-ceremony-1.jpeg"
+            src="/images/spiral-sphinx/carousel/1.jpg"
           />
         </Box>
         <Box onClick={() => openGallery()} alignSelf="center" pad="small">
@@ -73,32 +70,32 @@ export default function JackfruitCeremony() {
             {t('showImages')}
           </Text>
         </Box>
-        <Box background="#030303" width="100%">
-          <Box alignSelf="center" direction="row">
-            <Box width="small" pad="medium">
-              <Heading level="6" margin={{ bottom: 'xsmall' }} as="em">
-                {t('conceptEtcBy')}
-              </Heading>
-              <Text margin={{ bottom: 'small' }}>Emin Durak</Text>
-            </Box>
-            <Box width="small" pad="medium">
-              <Heading level="6" margin={{ bottom: 'xsmall' }} as="em">
-                {t('photosBy')}
-              </Heading>
-              <Text margin={{ bottom: 'small' }}>Alya Pogodina</Text>
-            </Box>
-            <Box width="small" pad="medium">
-              <Heading level="6" margin={{ bottom: 'xsmall' }} as="em">
-                {t('actors')}
-              </Heading>
-              <Text margin={{ bottom: 'small' }}>John... etc</Text>
-            </Box>
-          </Box>
-        </Box>
         <Box pad="medium">
           <Box alignSelf="center" width="medium">
             <Heading level="4">{t('concept')}</Heading>
-            {conceptDescription.map((p) => (
+            {description.map((p) => (
+              <Paragraph size="small" key={p.substr(0, 30)}>
+                {p}
+              </Paragraph>
+            ))}
+          </Box>
+        </Box>
+
+        <Box pad="medium">
+          <Box alignSelf="center" width="medium">
+            <Heading level="4">{t('performedAtTitle')}</Heading>
+            {performedAt.map((p) => (
+              <Paragraph size="small" key={p.substr(0, 30)}>
+                {p}
+              </Paragraph>
+            ))}
+          </Box>
+        </Box>
+
+        <Box pad="medium">
+          <Box alignSelf="center" width="medium">
+            <Heading level="4">{t('creditsTitle')}</Heading>
+            {credits.map((p) => (
               <Paragraph size="small" key={p.substr(0, 30)}>
                 {p}
               </Paragraph>
@@ -127,7 +124,7 @@ export default function JackfruitCeremony() {
                   <Image
                     fit="contain"
                     fill="vertical"
-                    src={`/images/jackfruit-ceremony/carousel/${image}.jpg`}
+                    src={`/images/spiral-sphinx/carousel/${image}.jpg`}
                   />
                 </Box>
               ))}
