@@ -35,9 +35,7 @@ export default function Home() {
           Sphinx Dance
         </Heading>
 
-        <Box pad="large">
-          <MainMenu />
-        </Box>
+        <MainMenu />
 
         <Box
           alignSelf="center"
@@ -60,6 +58,7 @@ export default function Home() {
             anchor="right"
             imageSrc="/images/larvae/2.jpg"
             objectPosition="center right"
+            link="/larvae"
           />
         </Box>
 
@@ -69,6 +68,7 @@ export default function Home() {
             anchor="bottom"
             imageSrc="/images/jackfruit-ceremony/home-banner.jpg"
             objectPosition="center left"
+            link="/jackfruit-ceremony"
           />
         </Box>
 
@@ -77,7 +77,8 @@ export default function Home() {
             title="Spiral Sphinx"
             anchor="top"
             imageSrc="/images/spiral-sphinx/carousel/1.jpg"
-            objectPosition="center "
+            objectPosition="center"
+            link="/spiral-sphinx"
           />
         </Box>
       </Layout>
@@ -100,19 +101,19 @@ function MainMenu() {
         }
         items={[
           {
-            label: 'Larvae',
+            label: <Link href="/larvae">Larvae</Link>,
             onClick: () => {
               router.push('/larvae');
             },
           },
           {
-            label: 'Jackfruit Ceremony',
+            label: <Link href="/jackfruit-ceremony">Jackfruit Ceremony</Link>,
             onClick: () => {
               router.push('/jackfruit-ceremony');
             },
           },
           {
-            label: 'Spiral Sphinx',
+            label: <Link href="/spiral-sphinx">Spiral Sphinx</Link>,
             onClick: () => {
               router.push('/spiral-sphinx');
             },
@@ -141,12 +142,13 @@ function MainMenu() {
   );
 }
 
-function CoolStack({ title, anchor, imageSrc, objectPosition }) {
+function CoolStack({ title, anchor, imageSrc, objectPosition, link }) {
+  const router = useRouter();
   return (
     <Stack
       anchor={anchor || 'bottom'}
       style={{ cursor: 'pointer' }}
-      onClick={() => router.push('/jackfruit-ceremony')}
+      onClick={() => router.push(link)}
     >
       <Box height="medium" width="100%" overflow="hidden" animation="fadeIn">
         <Image
