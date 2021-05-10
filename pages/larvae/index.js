@@ -66,11 +66,38 @@ export default function Larvae() {
         >
           <Image fill="horizontal" fit="cover" src="/images/larvae/2.jpg" />
         </Box>
+
         <Box onClick={() => openGallery()} alignSelf="center" pad="small">
           <Text size="small" color="brand" weight="bold">
             {t('showImages')}
           </Text>
         </Box>
+
+        <Box background="#030303" width="100%">
+          <Box alignSelf="center" direction="row">
+            <Box width="small" pad="medium">
+              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
+                {t('concept')}
+              </Heading>
+              <Text margin={{ bottom: 'small' }}>Emin Durak</Text>
+            </Box>
+            <Box width="small" pad="medium">
+              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
+                {t('mainCollab')}
+              </Heading>
+              <Text margin={{ bottom: 'small' }}>Oğuz Emre Divarcı</Text>
+            </Box>
+            <Box width="small" pad="medium">
+              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
+                {t('otherCollabs')}
+              </Heading>
+              <Text margin={{ bottom: 'small' }}>
+                Simay Yaylacı, Dilan Dibek
+              </Text>
+            </Box>
+          </Box>
+        </Box>
+
         <Box pad="medium">
           <Box alignSelf="center" width="medium">
             <Heading level="4">{t('concept')}</Heading>
