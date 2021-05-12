@@ -29,7 +29,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout>
+      <Layout isHome>
         <Heading level={2} alignSelf="center" margin={{ bottom: 'small' }}>
           Sphinx Dance
         </Heading>
@@ -43,10 +43,10 @@ export default function Home() {
           width="medium"
           pad="large"
         >
-          <Paragraph size="small" textAlign="center">
-            {t('homeAbout')}{' '}
+          <Paragraph textAlign="center">
+            {t('homeAbout')} <br />
             <Anchor as="span" hoverIndicator>
-              <Link href="/about">Learn more</Link>
+              <Link href="/about">{t('learnMore')}</Link>
             </Anchor>
           </Paragraph>
         </Box>
@@ -149,7 +149,13 @@ function CoolStack({ title, anchor, imageSrc, objectPosition, link }) {
       style={{ cursor: 'pointer' }}
       onClick={() => router.push(link)}
     >
-      <Box height="medium" width="100%" overflow="hidden" animation="fadeIn">
+      <Box
+        height="medium"
+        width="100%"
+        overflow="hidden"
+        animation="fadeIn"
+        hoverIndicator={{ opacity: 0.5 }}
+      >
         <Image
           fill="horizontal"
           fit="cover"
@@ -159,7 +165,7 @@ function CoolStack({ title, anchor, imageSrc, objectPosition, link }) {
       </Box>
       <Box background="rgba(0, 0, 0, 0.5)">
         <Heading textAlign="center" margin="large">
-          {title}
+          <Anchor href={link}>{title}</Anchor>
         </Heading>
       </Box>
     </Stack>

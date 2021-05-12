@@ -16,6 +16,9 @@ const theme = deepFreeze(
         size: '16px',
       },
     },
+    anchor: {
+      textDecoration: 'underline',
+    },
     heading: {
       color: mainColor,
       extend: {
@@ -27,17 +30,17 @@ const theme = deepFreeze(
         },
       },
     },
-    paragraph: {
-      medium: {
-        size: '16px',
-        height: '24px',
-        maxWidth: '600px',
-      },
-    },
     menu: {
       icons: {
         down: 'none',
         up: 'none',
+      },
+    },
+    paragraph: {
+      medium: {
+        size: '14px',
+        height: '20px',
+        maxWidth: '600px',
       },
     },
     text: {

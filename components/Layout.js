@@ -18,7 +18,7 @@ import theme from '../config/theme';
 
 function Layout(props) {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const { t, lang } = useTranslation('home');
+  const { t, lang } = useTranslation('common');
 
   const handleScroll = (event) => {
     setScrollPosition(window.pageYOffset);
@@ -70,6 +70,14 @@ function Layout(props) {
           )}
         </Box>
 
+        {!props.isHome && (
+          <Box alignSelf="center" pad={{ top: 'small' }}>
+            <Anchor as="span" size="small" color="dark-5">
+              <Link href="/">{t('home')}</Link>
+            </Anchor>
+          </Box>
+        )}
+
         <ResponsiveContext.Consumer>
           {(size) => {
             const large = ['large', 'medium'].includes(size);
@@ -78,31 +86,42 @@ function Layout(props) {
         </ResponsiveContext.Consumer>
       </Main>
 
-      <Footer background="dark-1" direction="column" pad="xlarge">
-        <Box direction="row" justify="center">
+      <Footer background="dark-1" direction="column" pad="small">
+        <Box direction="row">
           <Box width="medium">
+            <Paragraph
+              color="brand"
+              textAlign="center"
+              // style={{ fontFamily: 'Crimson Pro' }}
+            >
+              <b>{t('footerExcerpt')}</b>
+            </Paragraph>
+
             <Paragraph
               color="brand"
               textAlign="center"
               style={{ fontFamily: 'Crimson Pro' }}
             >
-              <b>{t('homeAbout')}</b>
+              <em>{t('footerExcerpt2')}</em>
             </Paragraph>
           </Box>
         </Box>
-
-        <Heading
-          color="light-3"
-          level="3"
-          textAlign="center"
-          margin={{ bottom: 'xsmall' }}
-        >
-          Contact:{' '}
-        </Heading>
-        <Anchor href="mailto:namaste@sphinx.dance">namaste@sphinx.dance</Anchor>
-        <Anchor href="https://www.sphinx.dance">
-          <b>www.sphinx.dance</b>
-        </Anchor>
+        <Box gap="small" align="center" margin={{ bottom: 'large' }}>
+          <Heading
+            color="light-3"
+            level="4"
+            textAlign="center"
+            margin={{ bottom: 'xsmall' }}
+          >
+            Contact:{' '}
+          </Heading>
+          <Anchor href="mailto:namaste@sphinx.dance">
+            namaste@sphinx.dance
+          </Anchor>
+          <Anchor href="https://sphinx.dance">
+            <b>sphinx.dance</b>
+          </Anchor>
+        </Box>
       </Footer>
     </Grommet>
   );

@@ -2,10 +2,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import Layout from '../../components/Layout';
-import { Anchor, Box, Heading, Image, Layer, Text, Paragraph } from 'grommet';
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
+import { Box, Heading, Image, Text, Paragraph } from 'grommet';
 import useTranslation from 'next-translate/useTranslation';
+import FullCarousel from '../../components/FullCarousel';
 
 const carouselImages = [];
 for (let i = 1; i <= 2; i++) {
@@ -17,7 +16,6 @@ export default function Larvae() {
   const { t, lang } = useTranslation('larvae');
 
   const description = t('description', {}, { returnObjects: true });
-  const credits = t('credits', {}, { returnObjects: true });
   const performedAt = t('performedAt', {}, { returnObjects: true });
   const openGallery = () => {
     setShowGallery(true);
@@ -35,11 +33,6 @@ export default function Larvae() {
       </Head>
 
       <Layout>
-        <Box alignSelf="center" pad={{ top: 'small' }}>
-          <Anchor as="span" size="small" color="dark-5">
-            <Link href="/">Home</Link>
-          </Anchor>
-        </Box>
         <Heading
           alignSelf="center"
           textAlign="center"
@@ -117,41 +110,10 @@ export default function Larvae() {
         </Box>
 
         {showGallery && (
-          <Layer
-            full
-            onEsc={() => setShowGallery(false)}
-            onClickOutside={() => setShowGallery(false)}
-          >
-            <AliceCarousel
-              autoPlay
-              // autoPlayControls
-              autoPlayStrategy="none"
-              autoPlayInterval={5000}
-              animationDuration={500}
-              animationType="fadeout"
-              infinite
-              disableDotsControls
-              // disableButtonsControls
-              items={carouselImages.map((image) => (
-                <Box direction="row" align="center" height="90vh">
-                  <Image
-                    fit="contain"
-                    fill="vertical"
-                    src={`/images/larvae/${image}.jpg`}
-                  />
-                </Box>
-              ))}
-            />
-            <Box
-              alignSelf="center"
-              margin={{ bottom: 'medium' }}
-              onClick={() => setShowGallery(false)}
-            >
-              <Text color="brand" size="xsmall">
-                CLOSE
-              </Text>
-            </Box>
-          </Layer>
+          <FullCarousel
+            images={carouselImages}
+            onClose={() => setShowGallery(false)}
+          />
         )}
       </Layout>
     </>
