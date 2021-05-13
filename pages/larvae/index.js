@@ -8,7 +8,7 @@ import FullCarousel from '../../components/FullCarousel';
 
 const carouselImages = [];
 for (let i = 1; i <= 2; i++) {
-  carouselImages.push(`/images/larvae/${i}.jpg`);
+  carouselImages.push(`/images/carousel/larvae/${i}.jpg`);
 }
 
 export default function Larvae() {

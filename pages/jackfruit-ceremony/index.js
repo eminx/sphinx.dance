@@ -8,7 +8,7 @@ import FullCarousel from '../../components/FullCarousel';
 
 const carouselImages = [];
 for (let i = 1; i <= 40; i++) {
-  carouselImages.push(`/images/jackfruit-ceremony/${i}.jpg`);
+  carouselImages.push(`/images/carousel/jackfruit-ceremony/${i}.jpg`);
 }
 
 export default function JackfruitCeremony() {
