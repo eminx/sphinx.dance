@@ -26,11 +26,7 @@ export default function ({ images, onClose }) {
         disableDotsControls
         items={images.map((image) => (
           <Box direction="row" align="center" height="90vh">
-            <Image
-              fit="contain"
-              fill="vertical"
-              src={`/images/larvae/${image}.jpg`}
-            />
+            <Image fit="contain" fill="vertical" src={image} />
           </Box>
         ))}
       />

@@ -8,7 +8,7 @@ import FullCarousel from '../../components/FullCarousel';
 
 const carouselImages = [];
 for (let i = 1; i <= 6; i++) {
-  carouselImages.push(i);
+  carouselImages.push(`/images/larvae/${i}.jpg`);
 }
 
 export default function SpiralSphinx() {
