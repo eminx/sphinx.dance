@@ -57,7 +57,11 @@ export default function Larvae() {
           overflow="hidden"
           onClick={() => openGallery()}
         >
-          <Image fill="horizontal" fit="cover" src="/images/larvae/2.jpg" />
+          <Image
+            fill="horizontal"
+            fit="cover"
+            src="/images/larvae/carousel/2.jpg"
+          />
         </Box>
 
         <Box onClick={() => openGallery()} alignSelf="center" pad="small">

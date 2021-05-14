@@ -55,7 +55,7 @@ export default function Home() {
           <CoolStack
             title="Larvae"
             anchor="right"
-            imageSrc="/images/larvae/2.jpg"
+            imageSrc="/images/larvae/carousel/2.jpg"
             objectPosition="center right"
             link="/larvae"
           />
