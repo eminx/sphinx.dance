@@ -115,9 +115,7 @@ function Layout(props) {
           >
             Contact:{' '}
           </Heading>
-          <Anchor href="mailto:namaste@sphinx.dance">
-            namaste@sphinx.dance
-          </Anchor>
+          <Anchor href="hello@sphinx.dance">hello@sphinx.dance</Anchor>
           <Anchor href="https://sphinx.dance">
             <b>sphinx.dance</b>
           </Anchor>

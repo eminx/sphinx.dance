@@ -1,15 +1,24 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
-import Layout from '../../components/Layout';
 import { Box, Heading, Image, Text, Paragraph } from 'grommet';
 import useTranslation from 'next-translate/useTranslation';
+import ReactPlayer from 'react-player';
+
+import Layout from '../../components/Layout';
 import FullCarousel from '../../components/FullCarousel';
 
 const carouselImages = [];
-for (let i = 1; i <= 2; i++) {
+for (let i = 1; i <= 5; i++) {
   carouselImages.push(`/images/larvae/carousel/${i}.jpg`);
 }
+
+const videos = [
+  {
+    title: '"In Rocks I feel"',
+    videoUrl: 'https://vimeo.com/557387212',
+  },
+];
 
 export default function Larvae() {
   const [showGallery, setShowGallery] = useState(false);
@@ -94,6 +103,26 @@ export default function Larvae() {
             </Box>
           </Box>
         </Box>
+
+        <Box alignSelf="center">
+          <Heading level="2" margin="small" textAlign="center">
+            Video Works
+          </Heading>
+        </Box>
+
+        {videos.map((video) => (
+          <Box key={video.title} alignSelf="center" width="100%">
+            <Heading
+              level="3"
+              margin="small"
+              textAlign="center"
+              alignSelf="center"
+            >
+              <em>{video.title}</em>
+            </Heading>
+            <ReactPlayer url={video.videoUrl} width="100%" />
+          </Box>
+        ))}
 
         <Box pad="medium">
           <Box alignSelf="center" width="medium">

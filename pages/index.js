@@ -45,9 +45,9 @@ export default function Home() {
         >
           <Paragraph textAlign="center">
             {t('homeAbout')} <br />
-            <Anchor as="span" hoverIndicator>
+            {/* <Anchor as="span" hoverIndicator>
               <Link href="/about">{t('learnMore')}</Link>
-            </Anchor>
+            </Anchor> */}
           </Paragraph>
         </Box>
 
@@ -58,6 +58,7 @@ export default function Home() {
             imageSrc="/images/larvae/carousel/2.jpg"
             objectPosition="center right"
             link="/larvae"
+            animation={{ type: 'fadeIn', delay: 300 }}
           />
         </Box>
 
@@ -68,6 +69,7 @@ export default function Home() {
             imageSrc="/images/jackfruit-ceremony/home-banner.jpg"
             objectPosition="center left"
             link="/jackfruit-ceremony"
+            animation={{ type: 'fadeIn', delay: 600 }}
           />
         </Box>
 
@@ -78,6 +80,7 @@ export default function Home() {
             imageSrc="/images/spiral-sphinx/carousel/1.jpg"
             objectPosition="center"
             link="/spiral-sphinx"
+            animation={{ type: 'fadeIn', delay: 900 }}
           />
         </Box>
       </Layout>
@@ -141,7 +144,14 @@ function MainMenu() {
   );
 }
 
-function CoolStack({ title, anchor, imageSrc, objectPosition, link }) {
+function CoolStack({
+  title,
+  anchor,
+  imageSrc,
+  objectPosition,
+  link,
+  animation,
+}) {
   const router = useRouter();
   return (
     <Stack
@@ -153,7 +163,7 @@ function CoolStack({ title, anchor, imageSrc, objectPosition, link }) {
         height="medium"
         width="100%"
         overflow="hidden"
-        animation="fadeIn"
+        animation={animation || 'fadeIn'}
         hoverIndicator={{ opacity: 0.5 }}
       >
         <Image
