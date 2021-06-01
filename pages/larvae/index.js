@@ -120,7 +120,7 @@ export default function Larvae() {
             >
               <em>{video.title}</em>
             </Heading>
-            <ReactPlayer url={video.videoUrl} width="100%" />
+            <ReactPlayer controls url={video.videoUrl} width="100%" />
           </Box>
         ))}
 
