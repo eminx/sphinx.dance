@@ -4,12 +4,33 @@ import { useState } from 'react';
 import Layout from '../../components/Layout';
 import { Box, Heading, Image, Text, Paragraph } from 'grommet';
 import useTranslation from 'next-translate/useTranslation';
+import ReactPlayer from 'react-player';
+
 import FullCarousel from '../../components/FullCarousel';
 
 const carouselImages = [];
 for (let i = 1; i <= 6; i++) {
   carouselImages.push(`/images/spiral-sphinx/carousel/${i}.jpg`);
 }
+
+const spiralVideos = [
+  {
+    info: 'Alienvation: Journey of two aliens from a deep down tunnel to the sunset and fire',
+    videoUrl: 'https://vimeo.com/359961424',
+  },
+  {
+    info: 'Documentative improvisations at Çatı Dans following the Spiral Sphinx workshop',
+    videoUrl: 'https://vimeo.com/376707017',
+  },
+  {
+    info: 'An Improvised Choreography at Jungle Dance following the Spiral Sphinx workshop',
+    videoUrl: 'https://vimeo.com/400524921',
+  },
+  {
+    info: 'An impro dance performance on a frozen lake in Hellasgården, Sweden',
+    videoUrl: 'https://vimeo.com/313034151',
+  },
+];
 
 export default function SpiralSphinx() {
   const [showGallery, setShowGallery] = useState(false);
@@ -69,6 +90,26 @@ export default function SpiralSphinx() {
             {t('showImages')}
           </Text>
         </Box>
+
+        <Box alignSelf="center">
+          <Heading level="2" margin={{ bottom: 'none' }} textAlign="center">
+            Video Works
+          </Heading>
+        </Box>
+
+        <Box pad="medium">
+          {spiralVideos.map((video) => (
+            <Box key={video.videoUrl} pad="medium">
+              <ReactPlayer controls url={video.videoUrl} width="100%" />
+              <Box alignSelf="center">
+                <Paragraph color="brand">
+                  <em>{video.info}</em>
+                </Paragraph>
+              </Box>
+            </Box>
+          ))}
+        </Box>
+
         <Box pad="medium">
           <Box alignSelf="center" width="medium">
             <Heading level="4">{t('concept')}</Heading>
