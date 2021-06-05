@@ -9,7 +9,7 @@ import Layout from '../../components/Layout';
 import FullCarousel from '../../components/FullCarousel';
 
 const carouselImages = [];
-for (let i = 1; i <= 5; i++) {
+for (let i = 7; i <= 7; i++) {
   carouselImages.push(`/images/larvae/carousel/${i}.jpg`);
 }
 
@@ -69,7 +69,7 @@ export default function Larvae() {
           <Image
             fill="horizontal"
             fit="cover"
-            src="/images/larvae/carousel/2.jpg"
+            src="/images/larvae/carousel/7.jpg"
           />
         </Box>
 
@@ -104,13 +104,13 @@ export default function Larvae() {
           </Box>
         </Box>
 
-        <Box alignSelf="center">
+        {/* <Box alignSelf="center">
           <Heading level="2" margin="small" textAlign="center">
             Video Works
           </Heading>
-        </Box>
+        </Box> */}
 
-        {videos.map((video) => (
+        {/* videos.map((video) => (
           <Box key={video.title} alignSelf="center" width="100%">
             <Heading
               level="3"
@@ -122,9 +122,9 @@ export default function Larvae() {
             </Heading>
             <ReactPlayer controls url={video.videoUrl} width="100%" />
           </Box>
-        ))}
+        ))} */}
 
-        <Box pad="medium">
+        <Box pad="medium" background="light-3">
           <Box alignSelf="center" width="medium">
             <Heading level="4">{t('concept')}</Heading>
             {description.map((p) => (

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { useState } from 'react';
 import Layout from '../../components/Layout';
 import { Box, Heading, Image, Text, Paragraph } from 'grommet';
@@ -110,7 +109,7 @@ export default function SpiralSphinx() {
           ))}
         </Box>
 
-        <Box pad="medium">
+        <Box pad="medium" background="light-3">
           <Box alignSelf="center" width="medium">
             <Heading level="4">{t('concept')}</Heading>
             {description.map((p) => (

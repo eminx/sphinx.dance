@@ -96,7 +96,7 @@ export default function JackfruitCeremony() {
             </Box>
           </Box>
         </Box>
-        <Box pad="medium">
+        <Box pad="medium" background="light-3">
           <Box alignSelf="center" width="medium">
             <Heading level="3" size="small">
               {t('concept')}

@@ -5,13 +5,18 @@ import Layout from '../components/Layout';
 import {
   Anchor,
   Box,
+  Button,
+  CheckBox,
+  FormField,
   Heading,
+  Grommet,
   Image,
   Menu,
   Nav,
   Paragraph,
   Stack,
   Text,
+  TextInput,
 } from 'grommet';
 import useTranslation from 'next-translate/useTranslation';
 
@@ -45,9 +50,9 @@ export default function Home() {
         >
           <Paragraph textAlign="center">
             {t('homeAbout')} <br />
-            {/* <Anchor as="span" hoverIndicator>
+            <Anchor as="span" hoverIndicator>
               <Link href="/about">{t('learnMore')}</Link>
-            </Anchor> */}
+            </Anchor>
           </Paragraph>
         </Box>
 
@@ -55,7 +60,7 @@ export default function Home() {
           <CoolStack
             title="Larvae"
             anchor="right"
-            imageSrc="/images/larvae/carousel/2.jpg"
+            imageSrc="/images/larvae/carousel/7.jpg"
             objectPosition="center right"
             link="/larvae"
             animation={{ type: 'fadeIn', delay: 300 }}
@@ -179,5 +184,86 @@ function CoolStack({
         </Heading>
       </Box>
     </Stack>
+  );
+}
+
+function EmailSignupModal() {
+  return (
+    <Box>
+      <form action="https://joincircles.us10.list-manage.com/subscribe/post">
+        <input type="hidden" name="u" value="ce7ac2789abf7ce01f739a2b6"></input>
+        <input type="hidden" name="id" value="35899a122a"></input>
+        <Grommet theme={footerTheme}>
+          <FormField color="light-1" name="email">
+            <TextInput
+              id="MERGE0"
+              name="MERGE0"
+              placeholder={t('newsletter-input-placeholder')}
+              style={{ color: '#fff' }}
+            />
+          </FormField>
+        </Grommet>
+        <Box margin={{ bottom: 'medium' }}>
+          <CheckBox
+            id="gdpr_45553"
+            name="gdpr[45553]"
+            value="Y"
+            label={
+              <Text color="white" size="small">
+                {t('newsletter-gdpr-check')}
+              </Text>
+            }
+          />
+        </Box>
+
+        <Button
+          primary
+          color="light-1"
+          type="submit"
+          label={t('newsletter-signup-button-label')}
+          style={{
+            borderRadius: 8,
+            marginTop: 12,
+          }}
+        />
+      </form>
+      <form action="https://joincircles.us10.list-manage.com/subscribe/post">
+        <input type="hidden" name="u" value="ce7ac2789abf7ce01f739a2b6"></input>
+        <input type="hidden" name="id" value="35899a122a"></input>
+        <Grommet theme={footerTheme}>
+          <FormField color="light-1" name="email">
+            <TextInput
+              id="MERGE0"
+              name="MERGE0"
+              placeholder={t('newsletter-input-placeholder')}
+              style={{ color: '#fff' }}
+            />
+          </FormField>
+        </Grommet>
+        <Box margin={{ bottom: 'medium' }}>
+          <CheckBox
+            id="gdpr_45553"
+            name="gdpr[45553]"
+            value="Y"
+            label={
+              <Text color="white" size="small">
+                {t('newsletter-gdpr-check')}
+              </Text>
+            }
+          />
+        </Box>
+
+        <Button
+          primary
+          color="light-1"
+          type="submit"
+          label={t('newsletter-signup-button-label')}
+          style={{
+            borderRadius: 8,
+            marginTop: 12,
+          }}
+        />
+      </form>
+    </Box>
   );
 }

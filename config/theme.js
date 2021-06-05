@@ -38,8 +38,8 @@ const theme = deepFreeze(
     },
     paragraph: {
       medium: {
-        size: '14px',
-        height: '20px',
+        size: '16px',
+        height: '24px',
         maxWidth: '600px',
       },
     },
