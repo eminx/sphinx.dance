@@ -3,5 +3,10 @@
   "past": "PAST",
   "about": "ABOUT",
   "homeAbout": "Founded and directed by Emin Durak, Sphinx Dance is an independent and nomadic studio, continuously developing, researching and synthesizing artistic works and processes in varying environments.",
-  "learnMore": "Learn more"
+  "learnMore": "Learn more",
+  "newsletter-signup-button-label": "Sign up",
+  "newsletter-signup-close-label": "Close",
+  "newsletter-signup-email-placeholder": "Email address",
+  "newsletter-signup-firstname-placeholder": "First name",
+  "newsletterSignup": "Sign up to email newsletter"
 }
