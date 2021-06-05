@@ -71,7 +71,7 @@ export default function Home() {
         </Box>
 
         <Box alignSelf="center" pad="medium">
-          <Anchor onClick={() => setSignupModal(true)} size="large">
+          <Anchor onClick={() => setSignupModal(true)}>
             {t('newsletterSignup')}
           </Anchor>
         </Box>
