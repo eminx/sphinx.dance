@@ -60,7 +60,7 @@ export default function About() {
         </Heading>
 
         <Box pad="medium">
-          <Box alignSelf="center" width="medium">
+          <Box alignSelf="center">
             {mainContent.map((p) => (
               <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
             ))}

@@ -33,7 +33,7 @@ const spiralVideos = [
 
 export default function SpiralSphinx() {
   const [showGallery, setShowGallery] = useState(false);
-  const { t, lang } = useTranslation('spiral-sphinx');
+  const { t } = useTranslation('spiral-sphinx');
 
   const description = t('description', {}, { returnObjects: true });
   const credits = t('credits', {}, { returnObjects: true });
@@ -110,7 +110,7 @@ export default function SpiralSphinx() {
         </Box>
 
         <Box pad="medium">
-          <Box alignSelf="center" width="medium">
+          <Box alignSelf="center">
             <Heading level="4">{t('concept')}</Heading>
             {description.map((p) => (
               <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
@@ -119,7 +119,7 @@ export default function SpiralSphinx() {
         </Box>
 
         <Box pad="medium">
-          <Box alignSelf="center" width="medium">
+          <Box alignSelf="center">
             <Heading level="4">{t('performedAtTitle')}</Heading>
             {performedAt.map((p) => (
               <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
@@ -128,7 +128,7 @@ export default function SpiralSphinx() {
         </Box>
 
         <Box pad="medium">
-          <Box alignSelf="center" width="medium">
+          <Box alignSelf="center">
             <Heading level="4">{t('creditsTitle')}</Heading>
             {credits.map((p) => (
               <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>

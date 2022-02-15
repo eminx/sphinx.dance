@@ -49,7 +49,7 @@ export default function Home() {
       </Head>
 
       <Layout isHome>
-        <Heading level={2} alignSelf="center" margin={{ bottom: 'small' }}>
+        <Heading alignSelf="center" margin={{ bottom: 'small' }}>
           SPHINX DANCE
         </Heading>
 
