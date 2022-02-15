@@ -53,17 +53,17 @@ function Layout(props) {
         <meta name="theme-color" content="#660F33" />
       </Head>
 
-      <Main background="#111111" width="100%">
+      <Main width="100%">
         <Box style={{ position: 'absolute', top: 6, right: 6 }}>
           {lang === 'en' ? (
             <Box onClick={async () => await setLanguage('tr')}>
-              <Anchor color="light-4" size="small">
+              <Anchor color="dark-3" size="small">
                 Türkçe
               </Anchor>
             </Box>
           ) : (
             <Box onClick={async () => await setLanguage('en')}>
-              <Anchor color="light-4" size="small">
+              <Anchor color="dark-3" size="small">
                 English
               </Anchor>
             </Box>
@@ -72,9 +72,11 @@ function Layout(props) {
 
         {!props.isHome && (
           <Box alignSelf="center" pad={{ top: 'small' }}>
-            <Anchor as="span" size="small" color="dark-5">
-              <Link href="/">{t('home')}</Link>
-            </Anchor>
+            <Link href="/">
+              <Anchor as="span" size="small" color="dark-2">
+                {t('home')}
+              </Anchor>
+            </Link>
           </Box>
         )}
 
@@ -86,7 +88,7 @@ function Layout(props) {
         </ResponsiveContext.Consumer>
       </Main>
 
-      <Footer background="dark-1" direction="column" pad="small">
+      <Footer background="light-3" direction="column" pad="small">
         <Box direction="row">
           <Box width="medium">
             <Paragraph

@@ -3,7 +3,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import useTranslation from 'next-translate/useTranslation';
 
-export default function ({ images, onClose }) {
+export default function FullCarousel ({ images, onClose }) {
   const { t, lang } = useTranslation('common');
 
   return (

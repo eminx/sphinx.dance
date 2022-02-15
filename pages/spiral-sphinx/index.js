@@ -45,7 +45,7 @@ export default function SpiralSphinx() {
   return (
     <>
       <Head>
-        <title>Jackfruit Ceremony | Sphinx Dance | Emin Durak</title>
+        <title>Spiral Sphinx | Sphinx Dance | Emin Durak</title>
         <meta
           name="description"
           content="Spiral Sphinx | Sphinx Dance | Independent Nomadic Studio for Movement Arts Synthesis & Research"
@@ -109,7 +109,7 @@ export default function SpiralSphinx() {
           ))}
         </Box>
 
-        <Box pad="medium" background="light-3">
+        <Box pad="medium">
           <Box alignSelf="center" width="medium">
             <Heading level="4">{t('concept')}</Heading>
             {description.map((p) => (

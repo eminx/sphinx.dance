@@ -59,7 +59,7 @@ export default function About() {
           <em>{t('subTitle')}</em>
         </Heading>
 
-        <Box pad="medium" background="light-1">
+        <Box pad="medium">
           <Box alignSelf="center" width="medium">
             {mainContent.map((p) => (
               <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>

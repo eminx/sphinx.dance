@@ -50,7 +50,7 @@ export default function Home() {
 
       <Layout isHome>
         <Heading level={2} alignSelf="center" margin={{ bottom: 'small' }}>
-          Sphinx Dance
+          SPHINX DANCE
         </Heading>
 
         <MainMenu />
@@ -210,9 +210,9 @@ function CoolStack({
           style={{ objectPosition: objectPosition || 'center left' }}
         />
       </Box>
-      <Box background="rgba(0, 0, 0, 0.5)">
+      <Box background="rgba(255, 255, 255, 0.5)">
         <Heading textAlign="center" margin="large">
-          <Anchor href={link}>{title}</Anchor>
+          <Link href={link}>{title}</Link>
         </Heading>
       </Box>
     </Stack>

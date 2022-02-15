@@ -92,7 +92,7 @@ export default function Larvae() {
           </Text>
         </Box> */}
 
-        <Box background="#030303" width="100%">
+        <Box  width="100%">
           <Box alignSelf="center" direction="row">
             <Box width="small" pad="medium">
               <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
@@ -117,7 +117,7 @@ export default function Larvae() {
           </Box>
         </Box>
 
-        <Box pad="medium" background="light-3">
+        <Box pad="medium">
           <Box alignSelf="center" width="medium">
             <Heading level="4">{t('concept')}</Heading>
             {description.map((p) => (

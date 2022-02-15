@@ -1,7 +1,7 @@
 import { deepFreeze, deepMerge } from 'grommet/utils';
 import { base } from 'grommet';
 
-const mainColor = '#ffbe64';
+const mainColor = 'rgba(180, 10, 125, 0.9)';
 
 const theme = deepFreeze(
   deepMerge(base, {
@@ -22,7 +22,7 @@ const theme = deepFreeze(
     heading: {
       color: mainColor,
       extend: {
-        fontFamily: "'Crimson Pro', serif",
+        fontFamily: "'Yeseva One', serif",
       },
       level: {
         4: {
