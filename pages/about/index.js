@@ -40,79 +40,83 @@ export default function About() {
       </Head>
 
       <Layout>
-        <Heading
-          level={3}
-          alignSelf="center"
-          textAlign="center"
-          margin={{ bottom: 'xsmall', top: 'medium' }}
-        >
-          {t('title')}
-        </Heading>
-        <Heading
-          level="3"
-          size="small"
-          textAlign="center"
-          alignSelf="center"
-          margin={{ top: 'none', bottom: 'medium' }}
-          style={{ fontWeight: 200 }}
-        >
-          <em>{t('subTitle')}</em>
-        </Heading>
+        {(size) => (
+          <>
+            <Heading
+              level={3}
+              alignSelf="center"
+              textAlign="center"
+              margin={{ bottom: 'xsmall', top: 'medium' }}
+            >
+              {t('title')}
+            </Heading>
+            <Heading
+              level="3"
+              size="small"
+              textAlign="center"
+              alignSelf="center"
+              margin={{ top: 'none', bottom: 'medium' }}
+              style={{ fontWeight: 200 }}
+            >
+              <em>{t('subTitle')}</em>
+            </Heading>
 
-        <Box pad="medium">
-          <Box alignSelf="center">
-            {mainContent.map((p) => (
-              <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
-            ))}
-          </Box>
-        </Box>
+            <Box pad="medium">
+              <Box alignSelf="center">
+                {mainContent.map((p) => (
+                  <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
+                ))}
+              </Box>
+            </Box>
 
-        {/* <Box
-          height="medium"
-          width="100%"
-          overflow="hidden"
-          onClick={() => openGallery()}
-        >
-          <Image
-            fill="horizontal"
-            fit="cover"
-            src="/images/larvae/carousel/3.jpg"
-          />
-        </Box>
+            {/* <Box
+              height="medium"
+              width="100%"
+              overflow="hidden"
+              onClick={() => openGallery()}
+            >
+              <Image
+                fill="horizontal"
+                fit="cover"
+                src="/images/larvae/carousel/3.jpg"
+              />
+            </Box>
 
-        <Box onClick={() => openGallery()} alignSelf="center" pad="small">
-          <Text size="small" color="brand" weight="bold">
-            {t('showImages')}
-          </Text>
-        </Box>
+            <Box onClick={() => openGallery()} alignSelf="center" pad="small">
+              <Text size="small" color="brand" weight="bold">
+                {t('showImages')}
+              </Text>
+            </Box>
 
-        <Box alignSelf="center" width="100%" margin={{ bottom: 'large' }}>
-          <Heading
-            level="3"
-            margin="small"
-            textAlign="center"
-            alignSelf="center"
-          >
-            <em>{video.title}</em>
-          </Heading>
-          <ReactPlayer url={video.videoUrl} width="100%" />
-        </Box> */}
-        {/* 
-        <Box pad="medium">
-          <Box alignSelf="center" width="medium">
-            <Heading level="4">{t('concept')}</Heading>
-            {description.map((p) => (
-              <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
-            ))}
-          </Box>
-        </Box> */}
+            <Box alignSelf="center" width="100%" margin={{ bottom: 'large' }}>
+              <Heading
+                level="3"
+                margin="small"
+                textAlign="center"
+                alignSelf="center"
+              >
+                <em>{video.title}</em>
+              </Heading>
+              <ReactPlayer url={video.videoUrl} width="100%" />
+            </Box> */}
+            {/* 
+            <Box pad="medium">
+              <Box alignSelf="center" width="medium">
+                <Heading level="4">{t('concept')}</Heading>
+                {description.map((p) => (
+                  <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
+                ))}
+              </Box>
+            </Box> */}
 
-        {/* {showGallery && (
-          <FullCarousel
-            images={carouselImages}
-            onClose={() => setShowGallery(false)}
-          />
-        )} */}
+            {/* {showGallery && (
+              <FullCarousel
+                images={carouselImages}
+                onClose={() => setShowGallery(false)}
+              />
+            )} */}
+          </>
+        )}
       </Layout>
     </>
   );

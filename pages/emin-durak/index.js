@@ -29,81 +29,60 @@ export default function EminDurak() {
       </Head>
 
       <Layout>
-        <Heading
-          alignSelf="center"
-          textAlign="center"
-          margin={{ bottom: 'xsmall', top: 'small' }}
-        >
-          {t('title')}
-        </Heading>
-        <Heading
-          level="3"
-          size="small"
-          textAlign="center"
-          alignSelf="center"
-          pad={{ horizontal: 'medium' }}
-          margin={{ top: 'none', bottom: 'xsmall' }}
-          style={{ fontWeight: 200 }}
-        >
-          <em>{t('subTitle')}</em>
-        </Heading>
+        {(size) => (
+          <>        
+            <Heading
+              alignSelf="center"
+              textAlign="center"
+              margin={{ bottom: 'xsmall', top: 'small' }}
+            >
+              {t('title')}
+            </Heading>
+            <Heading
+              level="3"
+              size="small"
+              textAlign="center"
+              alignSelf="center"
+              pad={{ horizontal: 'medium' }}
+              margin={{ top: 'none', bottom: 'xsmall' }}
+              style={{ fontWeight: 200 }}
+            >
+              <em>{t('subTitle')}</em>
+            </Heading>
 
-        <Box
-          height="medium"
-          width="100%"
-          overflow="hidden"
-          onClick={() => setShowGallery(true)}
-        >
-          <Image
-            fill="horizontal"
-            fit="cover"
-            src="/images/spiral-sphinx/carousel/1.jpg"
-          />
-        </Box>
-        <Box onClick={() => openGallery()} alignSelf="center" pad="small">
-          <Text size="small" color="brand" weight="bold">
-            {t('showImages')}
-          </Text>
-        </Box>
-
-        {/* <Box  width="100%">
-          <Box alignSelf="center" direction="row">
-            <Box width="small" pad="medium">
-              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
-                {t('concept')}
-              </Heading>
-              <Text margin={{ bottom: 'small' }}>Emin Durak</Text>
+            <Box
+              height="medium"
+              width="100%"
+              overflow="hidden"
+              onClick={() => setShowGallery(true)}
+            >
+              <Image
+                fill="horizontal"
+                fit="cover"
+                src="/images/spiral-sphinx/carousel/1.jpg"
+              />
             </Box>
-            <Box width="small" pad="medium">
-              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
-                {t('mainCollab')}
-              </Heading>
-              <Text margin={{ bottom: 'small' }}>Oğuz Emre Divarcı</Text>
-            </Box>
-            <Box width="small" pad="medium">
-              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
-                {t('otherCollabs')}
-              </Heading>
-              <Text margin={{ bottom: 'small' }}>
-                Simay Yaylacı, Dilan Dibek
+            <Box onClick={() => openGallery()} alignSelf="center" pad="small">
+              <Text size="small" color="brand" weight="bold">
+                {t('showImages')}
               </Text>
             </Box>
-          </Box>
-        </Box> */}
 
-        <Box pad="medium">
-          <Box alignSelf="center">
-            {mainContent.map((p) => (
-              <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
-            ))}
-          </Box>
-        </Box>
+            <Box pad="medium">
+              <Box alignSelf="center">
+                {mainContent.map((p) => (
+                  <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
+                ))}
+              </Box>
+            </Box>
 
-        {showGallery && (
-          <FullCarousel
-            images={carouselImages}
-            onClose={() => setShowGallery(false)}
-          />
+            {showGallery && (
+              <FullCarousel
+                images={carouselImages}
+                onClose={() => setShowGallery(false)}
+              />
+            )}
+          </>
         )}
       </Layout>
     </>

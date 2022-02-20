@@ -49,76 +49,80 @@ export default function Home() {
       </Head>
 
       <Layout isHome>
-        <Heading alignSelf="center" margin={{ bottom: 'small' }}>
-          SPHINX DANCE
-        </Heading>
+        {(size) => (
+          <>
+            <Heading alignSelf="center" margin={{ bottom: 'small' }}>
+              SPHINX DANCE
+            </Heading>
 
-        <MainMenu />
+            <MainMenu />
 
-        <Box
-          alignSelf="center"
-          direction="row"
-          align="center"
-          width="medium"
-          pad="large"
-        >
-          <Paragraph textAlign="center">
-            {t('homeAbout')} <br />
-            <Anchor as="span" hoverIndicator>
-              <Link href="/about">{t('learnMore')}</Link>
-            </Anchor>
-          </Paragraph>
-        </Box>
+            <Box
+              alignSelf="center"
+              direction="row"
+              align="center"
+              width="medium"
+              pad="large"
+            >
+              <Paragraph textAlign="center">
+                {t('homeAbout')} <br />
+                <Anchor as="span" hoverIndicator>
+                  <Link href="/about">{t('learnMore')}</Link>
+                </Anchor>
+              </Paragraph>
+            </Box>
 
-        <Box alignSelf="center" pad="medium">
-          <Anchor onClick={() => setSignupModal(true)}>
-            {t('newsletterSignup')}
-          </Anchor>
-        </Box>
+            <Box alignSelf="center" pad="medium">
+              <Anchor onClick={() => setSignupModal(true)}>
+                {t('newsletterSignup')}
+              </Anchor>
+            </Box>
 
-        <Box pad={{ vertical: 'large' }}>
-          <CoolStack
-            title="Larvae"
-            anchor="right"
-            imageSrc="/images/larvae/carousel/7.jpg"
-            objectPosition="center right"
-            link="/larvae"
-            animation={{ type: 'fadeIn', delay: 300 }}
-          />
-        </Box>
+            <Box pad={{ vertical: 'large' }}>
+              <CoolStack
+                title="Larvae"
+                anchor="right"
+                imageSrc="/images/larvae/carousel/7.jpg"
+                objectPosition="center right"
+                link="/larvae"
+                animation={{ type: 'fadeIn', delay: 300 }}
+              />
+            </Box>
 
-        <Box pad={{ vertical: 'large' }}>
-          <CoolStack
-            title="Jackfruit Ceremony"
-            anchor="bottom"
-            imageSrc="/images/jackfruit-ceremony/home-banner.jpg"
-            objectPosition="center left"
-            link="/jackfruit-ceremony"
-            animation={{ type: 'fadeIn', delay: 600 }}
-          />
-        </Box>
+            <Box pad={{ vertical: 'large' }}>
+              <CoolStack
+                title="Jackfruit Ceremony"
+                anchor="bottom"
+                imageSrc="/images/jackfruit-ceremony/home-banner.jpg"
+                objectPosition="center left"
+                link="/jackfruit-ceremony"
+                animation={{ type: 'fadeIn', delay: 600 }}
+              />
+            </Box>
 
-        <Box pad={{ vertical: 'large' }}>
-          <CoolStack
-            title="Spiral Sphinx"
-            anchor="top"
-            imageSrc="/images/spiral-sphinx/carousel/1.jpg"
-            objectPosition="center"
-            link="/spiral-sphinx"
-            animation={{ type: 'fadeIn', delay: 900 }}
-          />
-        </Box>
+            <Box pad={{ vertical: 'large' }}>
+              <CoolStack
+                title="Spiral Sphinx"
+                anchor="top"
+                imageSrc="/images/spiral-sphinx/carousel/1.jpg"
+                objectPosition="center"
+                link="/spiral-sphinx"
+                animation={{ type: 'fadeIn', delay: 900 }}
+              />
+            </Box>
 
-        {signupModal && (
-          <Layer
-            onClickOutside={() => setSignupModal(false)}
-            onEsc={() => setSignupModal(false)}
-          >
-            <EmailSignupModal
-              onClose={() => setSignupModal(false)}
-              {...emailSignupProps}
-            />
-          </Layer>
+            {signupModal && (
+              <Layer
+                onClickOutside={() => setSignupModal(false)}
+                onEsc={() => setSignupModal(false)}
+              >
+                <EmailSignupModal
+                  onClose={() => setSignupModal(false)}
+                  {...emailSignupProps}
+                />
+              </Layer>
+            )}
+          </>
         )}
       </Layout>
     </>

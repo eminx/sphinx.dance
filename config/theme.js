@@ -1,7 +1,7 @@
 import { deepFreeze, deepMerge } from 'grommet/utils';
 import { base } from 'grommet';
 
-const mainColor = 'rgba(180, 10, 125, 0.9)';
+const mainColor = 'rgba(75, 70, 70, 0.9)';
 
 const theme = deepFreeze(
   deepMerge(base, {

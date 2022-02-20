@@ -54,93 +54,97 @@ export default function SpiralSphinx() {
       </Head>
 
       <Layout>
-        <Heading
-          alignSelf="center"
-          textAlign="center"
-          margin={{ bottom: 'xsmall', top: 'small' }}
-        >
-          {t('title')}
-        </Heading>
-        <Heading
-          level="3"
-          size="small"
-          textAlign="center"
-          alignSelf="center"
-          pad={{ horizontal: 'medium' }}
-          margin={{ top: 'none', bottom: 'xsmall' }}
-          style={{ fontWeight: 200 }}
-        >
-          <em>{t('subTitle')}</em>
-        </Heading>
-        <Box
-          height="medium"
-          width="100%"
-          overflow="hidden"
-          onClick={() => openGallery()}
-        >
-          <Image
-            fill="horizontal"
-            fit="cover"
-            src="/images/spiral-sphinx/carousel/1.jpg"
-          />
-        </Box>
-        <Box onClick={() => openGallery()} alignSelf="center" pad="small">
-          <Text size="small" color="brand" weight="bold">
-            {t('showImages')}
-          </Text>
-        </Box>
+        {(size) => (
+          <>
+            <Heading
+              alignSelf="center"
+              textAlign="center"
+              margin={{ bottom: 'xsmall', top: 'small' }}
+            >
+              {t('title')}
+            </Heading>
+            <Heading
+              level="3"
+              size="small"
+              textAlign="center"
+              alignSelf="center"
+              pad={{ horizontal: 'medium' }}
+              margin={{ top: 'none', bottom: 'xsmall' }}
+              style={{ fontWeight: 200 }}
+            >
+              <em>{t('subTitle')}</em>
+            </Heading>
+            <Box
+              height="medium"
+              width="100%"
+              overflow="hidden"
+              onClick={() => openGallery()}
+            >
+              <Image
+                fill="horizontal"
+                fit="cover"
+                src="/images/spiral-sphinx/carousel/1.jpg"
+              />
+            </Box>
+            <Box onClick={() => openGallery()} alignSelf="center" pad="small">
+              <Text size="small" color="brand" weight="bold">
+                {t('showImages')}
+              </Text>
+            </Box>
 
-        <Box alignSelf="center">
-          <Heading level="2" margin={{ bottom: 'none' }} textAlign="center">
-            Video Works
-          </Heading>
-        </Box>
+            <Box alignSelf="center">
+              <Heading level="2" margin={{ bottom: 'none' }} textAlign="center">
+                Video Works
+              </Heading>
+            </Box>
 
-        <Box pad="medium">
-          {spiralVideos.map((video) => (
-            <Box key={video.videoUrl} pad="medium">
-              <ReactPlayer controls url={video.videoUrl} width="100%" />
+            <Box pad="medium">
+              {spiralVideos.map((video) => (
+                <Box key={video.videoUrl} pad="medium">
+                  <ReactPlayer controls url={video.videoUrl} width="100%" />
+                  <Box alignSelf="center">
+                    <Paragraph color="brand">
+                      <em>{video.info}</em>
+                    </Paragraph>
+                  </Box>
+                </Box>
+              ))}
+            </Box>
+
+            <Box pad="medium">
               <Box alignSelf="center">
-                <Paragraph color="brand">
-                  <em>{video.info}</em>
-                </Paragraph>
+                <Heading level="4">{t('concept')}</Heading>
+                {description.map((p) => (
+                  <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
+                ))}
               </Box>
             </Box>
-          ))}
-        </Box>
 
-        <Box pad="medium">
-          <Box alignSelf="center">
-            <Heading level="4">{t('concept')}</Heading>
-            {description.map((p) => (
-              <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
-            ))}
-          </Box>
-        </Box>
+            <Box pad="medium">
+              <Box alignSelf="center">
+                <Heading level="4">{t('performedAtTitle')}</Heading>
+                {performedAt.map((p) => (
+                  <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
+                ))}
+              </Box>
+            </Box>
 
-        <Box pad="medium">
-          <Box alignSelf="center">
-            <Heading level="4">{t('performedAtTitle')}</Heading>
-            {performedAt.map((p) => (
-              <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
-            ))}
-          </Box>
-        </Box>
+            <Box pad="medium">
+              <Box alignSelf="center">
+                <Heading level="4">{t('creditsTitle')}</Heading>
+                {credits.map((p) => (
+                  <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
+                ))}
+              </Box>
+            </Box>
 
-        <Box pad="medium">
-          <Box alignSelf="center">
-            <Heading level="4">{t('creditsTitle')}</Heading>
-            {credits.map((p) => (
-              <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
-            ))}
-          </Box>
-        </Box>
-
-        {showGallery && (
-          <FullCarousel
-            images={carouselImages}
-            onClose={() => setShowGallery(false)}
-          />
+            {showGallery && (
+              <FullCarousel
+                images={carouselImages}
+                onClose={() => setShowGallery(false)}
+              />
+            )}
+          </>
         )}
       </Layout>
     </>

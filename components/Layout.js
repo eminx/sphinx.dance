@@ -82,8 +82,7 @@ function Layout(props) {
 
         <ResponsiveContext.Consumer>
           {(size) => {
-            const large = ['large', 'medium'].includes(size);
-            return props.children;
+            return props.children(size);
           }}
         </ResponsiveContext.Consumer>
       </Main>
@@ -94,7 +93,6 @@ function Layout(props) {
             <Paragraph
               color="brand"
               textAlign="center"
-              // style={{ fontFamily: 'Crimson Pro' }}
             >
               <b>{t('footerExcerpt')}</b>
             </Paragraph>

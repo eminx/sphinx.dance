@@ -37,81 +37,85 @@ export default function JackfruitCeremony() {
       </Head>
 
       <Layout>
-        <Heading
-          alignSelf="center"
-          textAlign="center"
-          margin={{ bottom: 'xsmall', top: 'small' }}
-        >
-          {t('title')}
-        </Heading>
-        <Heading
-          level="3"
-          size="small"
-          textAlign="center"
-          alignSelf="center"
-          pad={{ horizontal: 'medium' }}
-          margin={{ top: 'none', bottom: 'small' }}
-          style={{ fontWeight: 200 }}
-        >
-          <em>{t('subTitle')}</em>
-        </Heading>
-        <Box
-          height="medium"
-          width="100%"
-          overflow="hidden"
-          onClick={() => openGallery()}
-        >
-          <Image
-            fill="horizontal"
-            fit="cover"
-            src="/images/jackfruit-ceremony/jackfruit-ceremony-1.jpeg"
-          />
-        </Box>
-        <Box onClick={() => openGallery()} alignSelf="center" pad="small">
-          <Text size="small" color="brand" weight="bold">
-            {t('showImages')}
-          </Text>
-        </Box>
-        <Box width="100%">
-          <Box alignSelf="center" direction="row">
-            <Box width="small" pad="medium">
-              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
-                {t('conceptEtcBy')}
-              </Heading>
-              <Text margin={{ bottom: 'small' }}>Emin Durak</Text>
+        {(size) => (
+          <>
+            <Heading
+              alignSelf="center"
+              textAlign="center"
+              margin={{ bottom: 'xsmall', top: 'small' }}
+            >
+              {t('title')}
+            </Heading>
+            <Heading
+              level="3"
+              size="small"
+              textAlign="center"
+              alignSelf="center"
+              pad={{ horizontal: 'medium' }}
+              margin={{ top: 'none', bottom: 'small' }}
+              style={{ fontWeight: 200 }}
+            >
+              <em>{t('subTitle')}</em>
+            </Heading>
+            <Box
+              height="medium"
+              width="100%"
+              overflow="hidden"
+              onClick={() => openGallery()}
+            >
+              <Image
+                fill="horizontal"
+                fit="cover"
+                src="/images/jackfruit-ceremony/jackfruit-ceremony-1.jpeg"
+              />
             </Box>
-            <Box width="small" pad="medium">
-              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
-                {t('photosBy')}
-              </Heading>
-              <Text margin={{ bottom: 'small' }}>Alya Pogodina</Text>
-            </Box>
-            <Box width="small" pad="medium">
-              <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
-                {t('actors')}
-              </Heading>
-              <Text margin={{ bottom: 'small' }}>
-                John, Judith, Kasia, Emin, Haya, Amanda, Annette, Coco
+            <Box onClick={() => openGallery()} alignSelf="center" pad="small">
+              <Text size="small" color="brand" weight="bold">
+                {t('showImages')}
               </Text>
             </Box>
-          </Box>
-        </Box>
-        <Box pad="medium">
-          <Box alignSelf="center">
-            <Heading level="3" size="small">
-              {t('concept')}
-            </Heading>
-            {conceptDescription.map((p) => (
-              <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
-            ))}
-          </Box>
-        </Box>
+            <Box width="100%">
+              <Box alignSelf="center" direction="row">
+                <Box width="small" pad="medium">
+                  <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
+                    {t('conceptEtcBy')}
+                  </Heading>
+                  <Text margin={{ bottom: 'small' }}>Emin Durak</Text>
+                </Box>
+                <Box width="small" pad="medium">
+                  <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
+                    {t('photosBy')}
+                  </Heading>
+                  <Text margin={{ bottom: 'small' }}>Alya Pogodina</Text>
+                </Box>
+                <Box width="small" pad="medium">
+                  <Heading level="4" margin={{ bottom: 'xsmall' }} as="em">
+                    {t('actors')}
+                  </Heading>
+                  <Text margin={{ bottom: 'small' }}>
+                    John, Judith, Kasia, Emin, Haya, Amanda, Annette, Coco
+                  </Text>
+                </Box>
+              </Box>
+            </Box>
+            <Box pad="medium">
+              <Box alignSelf="center">
+                <Heading level="3" size="small">
+                  {t('concept')}
+                </Heading>
+                {conceptDescription.map((p) => (
+                  <Paragraph key={p.substr(0, 30)}>{p}</Paragraph>
+                ))}
+              </Box>
+            </Box>
 
-        {showGallery && (
-          <FullCarousel
-            images={carouselImages}
-            onClose={() => setShowGallery(false)}
-          />
+            {showGallery && (
+              <FullCarousel
+                images={carouselImages}
+                onClose={() => setShowGallery(false)}
+              />
+            )}
+          </>
         )}
       </Layout>
     </>
