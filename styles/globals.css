@@ -1,20 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Sarabun&family=Yeseva+One&display=swap");
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: #07c;
 }
 
-* {
-  box-sizing: border-box;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Sarabun", -apple-system, BlinkMacSystemFont, sans-serif;
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+  height: 100%;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.3em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Yeseva One";
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+main {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0 24px;
+  margin-bottom: 48px;
+  min-height: 101vh;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+img.cat-gif {
+  width: 100%;
+  filter: hue-rotate(270deg);
+}
+
+.img-alt-text {
+  text-align: center;
+  font-size: 80%;
+}
+
+nav.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+nav.navbar > .navbar-item {
+  padding: 12px;
 }
 
 .home-button {
