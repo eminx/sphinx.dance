@@ -11,24 +11,24 @@ const works = [
     objectPosition: "bottom right",
     link: "/spiral-sphinx",
   },
-  {
-    title: "Larvae",
-    imageSrc: "/images/larvae/carousel/7.jpg",
-    objectPosition: "bottom right",
-    link: "/larvae",
-  },
-  {
-    title: "Larvae",
-    imageSrc: "/images/larvae/carousel/7.jpg",
-    objectPosition: "bottom right",
-    link: "/larvae",
-  },
-  {
-    title: "Larvae",
-    imageSrc: "/images/larvae/carousel/7.jpg",
-    objectPosition: "bottom right",
-    link: "/larvae",
-  },
+  // {
+  //   title: "Larvae",
+  //   imageSrc: "/images/larvae/carousel/7.jpg",
+  //   objectPosition: "bottom right",
+  //   link: "/larvae",
+  // },
+  // {
+  //   title: "Larvae",
+  //   imageSrc: "/images/larvae/carousel/7.jpg",
+  //   objectPosition: "bottom right",
+  //   link: "/larvae",
+  // },
+  // {
+  //   title: "Larvae",
+  //   imageSrc: "/images/larvae/carousel/7.jpg",
+  //   objectPosition: "bottom right",
+  //   link: "/larvae",
+  // },
 ];
 
 export default works;
