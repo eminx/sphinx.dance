@@ -13,7 +13,7 @@ const works = [
   },
   {
     title: "Larvae",
-    imageSrc: "/images/larvae/carousel/7.jpg",
+    imageSrc: "/images/larvae/carousel/1.jpg",
     objectPosition: "bottom right",
     link: "/larvae",
   },
