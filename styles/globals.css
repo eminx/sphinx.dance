@@ -9,7 +9,8 @@ html {
 }
 
 a {
-  color: #07c;
+  /* color: #07c; */
+  color: inherit;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
   /* -moz-osx-font-smoothing: grayscale; */
   height: 100%;
   color: rgba(0, 0, 0, 0.8);
-  line-height: 1.3em;
+  line-height: 1.6em;
 }
 
 h1,
@@ -37,11 +38,12 @@ code {
 }
 
 main {
-  max-width: 540px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 24px;
   margin-bottom: 48px;
   min-height: 101vh;
+  width: 100%;
 }
 
 ul {
