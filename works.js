@@ -24,10 +24,10 @@ const works = [
     link: "/spiral-sphinx",
   },
   // {
-  //   title: "Larvae",
-  //   imageSrc: "/images/larvae/carousel/7.jpg",
+  //   title: "Bonding on the Rocks",
+  //   imageSrc: "/images/bonding-on-the-rocks/carousel/1.jpg",
   //   objectPosition: "bottom right",
-  //   link: "/larvae",
+  //   link: "/bonding-on-the-rocks",
   // },
 ];
 

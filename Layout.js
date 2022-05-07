@@ -9,8 +9,13 @@ function Layout({ children }) {
     window.scrollTo(0, 0);
   }, []);
 
+  const today = new Date();
+  const currentHour = today.getHours();
+
+  const isDark = currentHour < 7 || currentHour > 19;
+
   return (
-    <Box background="light-1">
+    <Box background={isDark ? "dark-2" : "light-2"}>
       <Head>
         <title>Emin Durak | Infinitesimals Space | Research Projects </title>
       </Head>
