@@ -6,8 +6,12 @@ const menu = [
     value: "/",
   },
   {
-    label: "About",
+    label: "Sphinx Dance",
     value: "/about",
+  },
+  {
+    label: "Emin Durak",
+    value: "/emin-durak",
   },
 ];
 
