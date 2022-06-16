@@ -1,5 +1,11 @@
 const works = [
   {
+    title: "Asimetrik",
+    imageSrc: "/images/asimetrik/carousel/1.jpg",
+    objectPosition: "bottom right",
+    link: "/asimetrik",
+  },
+  {
     title: "Jackfruit Ceremony",
     imageSrc: "/images/jackfruit-ceremony/home-banner.jpg",
     objectPosition: "bottom right",
