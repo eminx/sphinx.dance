@@ -1,5 +1,11 @@
 const works = [
   {
+    title: "Antibodies",
+    imageSrc: "/images/antibodies/antibodies.jpg",
+    objectPosition: "bottom right",
+    link: "/antibodies",
+  },
+  {
     title: "Asimetrik",
     imageSrc: "/images/asimetrik/carousel/1.jpg",
     objectPosition: "bottom right",
